@@ -21,11 +21,20 @@ class FriendDetailsViewController: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var registeredDateLabel: UILabel!
+    
+    //MARK: - Properties
+    var user: User? {
+        didSet {
+            //updateViews()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        updateViews()
     }
     
 
@@ -36,4 +45,32 @@ class FriendDetailsViewController: UIViewController {
         }
     }
 
+}
+
+//MARK: - Functions
+extension FriendDetailsViewController {
+    
+    //Update Labels and Images from selected Table View Cell
+    func updateViews() {
+        //guard isViewLoaded, let user = user else { return }
+        guard let user = user else { return }
+        
+        guard let imageData = try? Data(contentsOf: user.picture.large) else {
+            fatalError()
+        }
+        profilePicture.image = UIImage(data: imageData)
+        nameLabel.text = "\(user.name.first.capitalized) \(user.name.last.capitalized)"
+        usernameLabel.text = "\(user.login.username)"
+        
+        genderAgeLabel.text = "\(user.gender.capitalized) \(user.dob.age)"
+        birthdateLabel.text = "\(user.dob.date)"
+        streetLabel.text = "\(user.location.street.number) \(user.location.street.name)"
+        cityCountryLabel.text = "\(user.location.street.number) \(user.location.street.name)"
+        phoneLabel.text = "\(user.phone)"
+        emailLabel.text = "\(user.email)"
+        registeredDateLabel.text = "Registered on \(user.registered.date)"
+        
+        
+        
+    }
 }
