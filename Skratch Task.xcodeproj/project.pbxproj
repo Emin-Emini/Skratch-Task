@@ -18,6 +18,8 @@
 		239F5CF126186B8D001024D7 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F5CF026186B8D001024D7 /* FriendsViewController.swift */; };
 		239F5CF626186BC6001024D7 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F5CF526186BC6001024D7 /* FriendTableViewCell.swift */; };
 		239F5D0326186DCE001024D7 /* FriendDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F5D0226186DCE001024D7 /* FriendDetailsViewController.swift */; };
+		239F5D08261873E5001024D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F5D07261873E5001024D7 /* User.swift */; };
+		239F5D1926187501001024D7 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F5D1826187501001024D7 /* APIController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		239F5CF026186B8D001024D7 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		239F5CF526186BC6001024D7 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		239F5D0226186DCE001024D7 /* FriendDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailsViewController.swift; sourceTree = "<group>"; };
+		239F5D07261873E5001024D7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		239F5D1826187501001024D7 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +112,10 @@
 				239F5CBD26186B2F001024D7 /* AppDelegate.swift */,
 				239F5CBF26186B2F001024D7 /* SceneDelegate.swift */,
 				239F5CC126186B2F001024D7 /* ViewController.swift */,
-				239F5CFA26186BF3001024D7 /* ViewController */,
+				239F5D0C261873EB001024D7 /* Model */,
 				239F5CFE26186C03001024D7 /* View */,
+				239F5CFA26186BF3001024D7 /* ViewController */,
+				239F5D1D2618750A001024D7 /* Networking */,
 				239F5CC326186B2F001024D7 /* Main.storyboard */,
 				239F5CC626186B31001024D7 /* Assets.xcassets */,
 				239F5CC826186B31001024D7 /* LaunchScreen.storyboard */,
@@ -151,6 +157,22 @@
 				239F5CF526186BC6001024D7 /* FriendTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		239F5D0C261873EB001024D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				239F5D07261873E5001024D7 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		239F5D1D2618750A001024D7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				239F5D1826187501001024D7 /* APIController.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,8 +309,10 @@
 				239F5CC226186B2F001024D7 /* ViewController.swift in Sources */,
 				239F5CF626186BC6001024D7 /* FriendTableViewCell.swift in Sources */,
 				239F5D0326186DCE001024D7 /* FriendDetailsViewController.swift in Sources */,
+				239F5D1926187501001024D7 /* APIController.swift in Sources */,
 				239F5CBE26186B2F001024D7 /* AppDelegate.swift in Sources */,
 				239F5CC026186B2F001024D7 /* SceneDelegate.swift in Sources */,
+				239F5D08261873E5001024D7 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
