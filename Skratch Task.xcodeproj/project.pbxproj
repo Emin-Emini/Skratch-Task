@@ -15,6 +15,9 @@
 		239F5CCA26186B31001024D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 239F5CC826186B31001024D7 /* LaunchScreen.storyboard */; };
 		239F5CD526186B32001024D7 /* Skratch_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F5CD426186B32001024D7 /* Skratch_TaskTests.swift */; };
 		239F5CE026186B32001024D7 /* Skratch_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F5CDF26186B32001024D7 /* Skratch_TaskUITests.swift */; };
+		239F5CF126186B8D001024D7 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F5CF026186B8D001024D7 /* FriendsViewController.swift */; };
+		239F5CF626186BC6001024D7 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F5CF526186BC6001024D7 /* FriendTableViewCell.swift */; };
+		239F5D0326186DCE001024D7 /* FriendDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F5D0226186DCE001024D7 /* FriendDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		239F5CDB26186B32001024D7 /* Skratch TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Skratch TaskUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		239F5CDF26186B32001024D7 /* Skratch_TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skratch_TaskUITests.swift; sourceTree = "<group>"; };
 		239F5CE126186B32001024D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		239F5CF026186B8D001024D7 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		239F5CF526186BC6001024D7 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		239F5D0226186DCE001024D7 /* FriendDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,8 @@
 				239F5CBD26186B2F001024D7 /* AppDelegate.swift */,
 				239F5CBF26186B2F001024D7 /* SceneDelegate.swift */,
 				239F5CC126186B2F001024D7 /* ViewController.swift */,
+				239F5CFA26186BF3001024D7 /* ViewController */,
+				239F5CFE26186C03001024D7 /* View */,
 				239F5CC326186B2F001024D7 /* Main.storyboard */,
 				239F5CC626186B31001024D7 /* Assets.xcassets */,
 				239F5CC826186B31001024D7 /* LaunchScreen.storyboard */,
@@ -126,6 +134,23 @@
 				239F5CE126186B32001024D7 /* Info.plist */,
 			);
 			path = "Skratch TaskUITests";
+			sourceTree = "<group>";
+		};
+		239F5CFA26186BF3001024D7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				239F5CF026186B8D001024D7 /* FriendsViewController.swift */,
+				239F5D0226186DCE001024D7 /* FriendDetailsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		239F5CFE26186C03001024D7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				239F5CF526186BC6001024D7 /* FriendTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +283,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				239F5CF126186B8D001024D7 /* FriendsViewController.swift in Sources */,
 				239F5CC226186B2F001024D7 /* ViewController.swift in Sources */,
+				239F5CF626186BC6001024D7 /* FriendTableViewCell.swift in Sources */,
+				239F5D0326186DCE001024D7 /* FriendDetailsViewController.swift in Sources */,
 				239F5CBE26186B2F001024D7 /* AppDelegate.swift in Sources */,
 				239F5CC026186B2F001024D7 /* SceneDelegate.swift in Sources */,
 			);
