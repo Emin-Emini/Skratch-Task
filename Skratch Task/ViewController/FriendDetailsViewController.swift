@@ -50,7 +50,8 @@ class FriendDetailsViewController: UIViewController {
 //MARK: - Functions
 extension FriendDetailsViewController {
     
-    //Update Labels and Images from selected Table View Cell
+    /*
+    This function updates Labels and Images from selected Table View Cell  */
     func updateViews() {
         //guard isViewLoaded, let user = user else { return }
         guard let user = user else { return }
@@ -63,14 +64,37 @@ extension FriendDetailsViewController {
         usernameLabel.text = "\(user.login.username)"
         
         genderAgeLabel.text = "\(user.gender.capitalized) \(user.dob.age)"
-        birthdateLabel.text = "\(user.dob.date)"
+        birthdateLabel.text = formatDate(date: user.dob.date, withTime: false)
         streetLabel.text = "\(user.location.street.number) \(user.location.street.name)"
         cityCountryLabel.text = "\(user.location.street.number) \(user.location.street.name)"
         phoneLabel.text = "\(user.phone)"
         emailLabel.text = "\(user.email)"
-        registeredDateLabel.text = "Registered on \(user.registered.date)"
+        registeredDateLabel.text = "Registered on \(formatDate(date: user.dob.date, withTime: true))"
+    }
+    
+    /*
+    This function formats date in the way you select.
+    For instance:
+    The received date is "1951-03-25T19:11:03.083Z",
+    It will format it to "25 March 1951, 7:11pm"    */
+    func formatDate(date: String, withTime: Bool) -> String {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
         
-        
-        
+        if withTime {
+            dateFormatter.dateFormat = "dd MMMM yyyy, HH:mma"
+            dateFormatter.amSymbol = "am"
+            dateFormatter.pmSymbol = "pm"
+            
+        } else {
+            dateFormatter.dateFormat = "dd MMMM yyyy"
+        }
+       let dateObj: Date? = dateFormatterGet.date(from: date)
+
+       return dateFormatter.string(from: dateObj!)
     }
 }
