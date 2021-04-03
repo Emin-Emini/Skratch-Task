@@ -20,6 +20,7 @@
 		239F5D0326186DCE001024D7 /* FriendDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F5D0226186DCE001024D7 /* FriendDetailsViewController.swift */; };
 		239F5D08261873E5001024D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F5D07261873E5001024D7 /* User.swift */; };
 		239F5D1926187501001024D7 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F5D1826187501001024D7 /* APIController.swift */; };
+		239F5D252618B029001024D7 /* DismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F5D242618B029001024D7 /* DismissAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		239F5D0226186DCE001024D7 /* FriendDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailsViewController.swift; sourceTree = "<group>"; };
 		239F5D07261873E5001024D7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		239F5D1826187501001024D7 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		239F5D242618B029001024D7 /* DismissAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				239F5CFA26186BF3001024D7 /* ViewController */,
 				239F5D1D2618750A001024D7 /* Networking */,
 				239F5CC326186B2F001024D7 /* Main.storyboard */,
+				239F5D242618B029001024D7 /* DismissAnimator.swift */,
 				239F5CC626186B31001024D7 /* Assets.xcassets */,
 				239F5CC826186B31001024D7 /* LaunchScreen.storyboard */,
 				239F5CCB26186B31001024D7 /* Info.plist */,
@@ -312,6 +315,7 @@
 				239F5D1926187501001024D7 /* APIController.swift in Sources */,
 				239F5CBE26186B2F001024D7 /* AppDelegate.swift in Sources */,
 				239F5CC026186B2F001024D7 /* SceneDelegate.swift in Sources */,
+				239F5D252618B029001024D7 /* DismissAnimator.swift in Sources */,
 				239F5D08261873E5001024D7 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

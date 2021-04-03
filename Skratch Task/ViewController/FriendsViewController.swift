@@ -32,6 +32,12 @@ class FriendsViewController: UIViewController {
         }
     }
 
+    
+
+}
+
+//MARK: - Functions
+extension FriendsViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "userDetailsSegue" {
             guard let userDetailsVC = segue.destination as? FriendDetailsViewController else { return }
@@ -41,7 +47,6 @@ class FriendsViewController: UIViewController {
             userDetailsVC.user = user
         }
     }
-
 }
 
 //MARK: - Table View
