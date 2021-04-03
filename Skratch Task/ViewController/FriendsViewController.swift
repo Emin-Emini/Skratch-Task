@@ -12,8 +12,10 @@ class FriendsViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var friendsTableView: UITableView!
     
+    //MARK: - Properties
     let apiController = APIController()
     
+    //MARK: - View Load
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -38,6 +40,7 @@ class FriendsViewController: UIViewController {
 
 //MARK: - Functions
 extension FriendsViewController {
+    // This functions call the segue in storyboard and passes data from Table View to Details View through API Controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "userDetailsSegue" {
             guard let userDetailsVC = segue.destination as? FriendDetailsViewController else { return }

@@ -32,11 +32,11 @@ class FriendDetailsViewController: UIViewController, UIGestureRecognizerDelegate
     
     //Gestures
     private var pan: UIPanGestureRecognizer!
-    
     let darknessThreshold: CGFloat = 0.2
     let dismissThreshold: CGFloat = 60.0 * UIScreen.main.nativeScale
     var dismissFeedbackTriggered = false
 
+    //MARK: - View Load
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -91,7 +91,7 @@ extension FriendDetailsViewController {
         genderAgeLabel.text = "\(user.gender.capitalized) \(user.dob.age)"
         birthdateLabel.text = formatDate(date: user.dob.date, withTime: false)
         streetLabel.text = "\(user.location.street.number) \(user.location.street.name)"
-        cityCountryLabel.text = "\(user.location.street.number) \(user.location.street.name)"
+        cityCountryLabel.text = "\(user.location.city), \(user.location.state), \(user.location.country)"
         phoneLabel.text = "\(user.phone)"
         emailLabel.text = "\(user.email)"
         registeredDateLabel.text = "Registered on \(formatDate(date: user.dob.date, withTime: true))"
