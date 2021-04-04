@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23980EE02619E489000CBEF6 /* CustomAnnotationMapbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23980EDF2619E489000CBEF6 /* CustomAnnotationMapbox.swift */; };
+		23980F01261A28EF000CBEF6 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23980F00261A28EF000CBEF6 /* UserViewModel.swift */; };
 		239F5CBE26186B2F001024D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F5CBD26186B2F001024D7 /* AppDelegate.swift */; };
 		239F5CC026186B2F001024D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F5CBF26186B2F001024D7 /* SceneDelegate.swift */; };
 		239F5CC526186B2F001024D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 239F5CC326186B2F001024D7 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		04A5FD7C6F8ACA655ADE140F /* Pods_Skratch_TaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Skratch_TaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE2DB8FDC09C6899850B51B /* Pods-Skratch Task-Skratch TaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skratch Task-Skratch TaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-Skratch Task-Skratch TaskUITests/Pods-Skratch Task-Skratch TaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		23980EDF2619E489000CBEF6 /* CustomAnnotationMapbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationMapbox.swift; sourceTree = "<group>"; };
+		23980F00261A28EF000CBEF6 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		239F5CBA26186B2F001024D7 /* Skratch Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Skratch Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		239F5CBD26186B2F001024D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		239F5CBF26186B2F001024D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,14 @@
 			path = "Helping Files";
 			sourceTree = "<group>";
 		};
+		23980EF9261A0948000CBEF6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				23980F00261A28EF000CBEF6 /* UserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		239F5CB126186B2F001024D7 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +151,7 @@
 				239F5CBF26186B2F001024D7 /* SceneDelegate.swift */,
 				239F5D0C261873EB001024D7 /* Model */,
 				239F5CFE26186C03001024D7 /* View */,
+				23980EF9261A0948000CBEF6 /* ViewModel */,
 				239F5CFA26186BF3001024D7 /* ViewController */,
 				239F5D1D2618750A001024D7 /* Networking */,
 				23980EED2619E5D4000CBEF6 /* Helping Files */,
@@ -465,6 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				239F5CF126186B8D001024D7 /* FriendsViewController.swift in Sources */,
+				23980F01261A28EF000CBEF6 /* UserViewModel.swift in Sources */,
 				239F5CF626186BC6001024D7 /* FriendTableViewCell.swift in Sources */,
 				239F5D0326186DCE001024D7 /* FriendDetailsViewController.swift in Sources */,
 				239F5D1926187501001024D7 /* APIController.swift in Sources */,

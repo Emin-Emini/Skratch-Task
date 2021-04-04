@@ -129,12 +129,7 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
         
         let user = apiController.users[indexPath.row]
         
-        guard let imageData = try? Data(contentsOf: user.picture.medium) else {
-            fatalError()
-        }
-        cell.profilePicture.image = UIImage(data: imageData)
-        cell.fullNameLabel.text = "\(user.name.first.capitalized) \(user.name.last.capitalized)"
-        cell.usernameLabel.text = "\(user.login.username)"
+        cell.configure(with: UserViewModel(with: user))
         
         return cell
     }
