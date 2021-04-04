@@ -23,6 +23,7 @@ class FriendsViewController: UIViewController {
     @IBOutlet weak var finishSelectingListSizeButtonConstraint: NSLayoutConstraint!
     
     //MARK: - Properties
+    //API Controller
     var apiController = APIController(listSize: 5)
     
     
@@ -241,7 +242,19 @@ extension FriendsViewController: UITextFieldDelegate {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
             listSizeView.layer.shadowOpacity = 0
-            listSizeTextFieldConstraint.constant = keyboardHeight - 22
+            
+            // Get main screen bounds
+            let screenSize: CGRect = UIScreen.main.bounds
+            let screenHeight = screenSize.height
+            
+            switch screenHeight {
+            case 800...: //Devices that have Notch (iPhone X, 12, 12 Pro, 12 Pro Max)
+                listSizeTextFieldConstraint.constant = keyboardHeight - 22
+            case 0...800: //Devices without Notch (iPhone 8, 8+, SE)
+                listSizeTextFieldConstraint.constant = keyboardHeight + 8
+            default:
+                break
+            }
             listSizeTextFieldViewConstraintToTextField.constant = 0
             finishSelectingListSizeButtonConstraint.constant = 0
         }
