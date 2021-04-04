@@ -89,10 +89,10 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JOa-Is-9eC">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="separatorColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2v-uP-yAh">
-                                <rect key="frame" x="0.0" y="960" width="414" height="72"/>
+                                <rect key="frame" x="0.0" y="936" width="414" height="72"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No. of users" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pq-Cg-uZq">
                                         <rect key="frame" x="24" y="25.5" width="105" height="21"/>
@@ -112,7 +112,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pxn-n3-eBB">
-                                <rect key="frame" x="24" y="772" width="138" height="48"/>
+                                <rect key="frame" x="24" y="798" width="138" height="48"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVW-PB-KeW" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
                                         <rect key="frame" x="0.0" y="0.0" width="138" height="48"/>
@@ -153,7 +153,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFy-I2-11s">
-                                <rect key="frame" x="440" y="884" width="52" height="52"/>
+                                <rect key="frame" x="440" y="860" width="52" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="oor-Op-TH4"/>
                                     <constraint firstAttribute="width" constant="52" id="qcz-rE-3vh"/>
@@ -164,7 +164,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGo-ez-N4D">
-                                <rect key="frame" x="342" y="772" width="48" height="48"/>
+                                <rect key="frame" x="342" y="798" width="48" height="48"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s2A-ZS-n9r">
                                         <rect key="frame" x="0.0" y="9" width="48" height="30.5"/>
@@ -196,12 +196,12 @@
                             <constraint firstItem="gCm-At-XRP" firstAttribute="top" secondItem="8h7-nN-YxR" secondAttribute="bottom" constant="25" id="9cd-3g-f5r"/>
                             <constraint firstItem="JOa-Is-9eC" firstAttribute="trailing" secondItem="glw-0H-Ok7" secondAttribute="trailing" id="Dl2-0A-Q7O"/>
                             <constraint firstItem="JOa-Is-9eC" firstAttribute="top" secondItem="swK-sQ-Wku" secondAttribute="top" id="I9k-vd-9SE"/>
-                            <constraint firstItem="glw-0H-Ok7" firstAttribute="bottom" secondItem="Pxn-n3-eBB" secondAttribute="bottom" constant="42" id="JYO-dj-ttA"/>
+                            <constraint firstItem="glw-0H-Ok7" firstAttribute="bottom" secondItem="Pxn-n3-eBB" secondAttribute="bottom" constant="16" id="JYO-dj-ttA"/>
                             <constraint firstItem="Pxn-n3-eBB" firstAttribute="leading" secondItem="glw-0H-Ok7" secondAttribute="leading" constant="24" id="LIN-lF-yqK"/>
                             <constraint firstItem="JOa-Is-9eC" firstAttribute="leading" secondItem="glw-0H-Ok7" secondAttribute="leading" id="LS6-TT-JIC"/>
-                            <constraint firstItem="glw-0H-Ok7" firstAttribute="bottom" secondItem="DGo-ez-N4D" secondAttribute="bottom" constant="42" id="O14-Kg-3tS"/>
+                            <constraint firstItem="glw-0H-Ok7" firstAttribute="bottom" secondItem="DGo-ez-N4D" secondAttribute="bottom" constant="16" id="O14-Kg-3tS"/>
                             <constraint firstItem="gCm-At-XRP" firstAttribute="leading" secondItem="glw-0H-Ok7" secondAttribute="leading" id="UJ7-oF-feD"/>
-                            <constraint firstItem="Q2v-uP-yAh" firstAttribute="centerY" secondItem="DGo-ez-N4D" secondAttribute="centerY" constant="200" id="WAR-oY-mCx"/>
+                            <constraint firstItem="Q2v-uP-yAh" firstAttribute="centerY" secondItem="DGo-ez-N4D" secondAttribute="centerY" constant="150" id="WAR-oY-mCx"/>
                             <constraint firstItem="Q2v-uP-yAh" firstAttribute="leading" secondItem="glw-0H-Ok7" secondAttribute="leading" id="Xe1-HF-GWN"/>
                             <constraint firstAttribute="bottom" secondItem="JOa-Is-9eC" secondAttribute="bottom" id="ZAa-Xd-18q"/>
                             <constraint firstItem="glw-0H-Ok7" firstAttribute="trailing" secondItem="DGo-ez-N4D" secondAttribute="trailing" constant="24" id="lSc-zg-t0P"/>

@@ -63,8 +63,8 @@ class FriendsViewController: UIViewController {
         fetchDataFromAPI()
         
         listSizeView.layer.shadowOpacity = 0.2
-        listSizeTextFieldConstraint.constant = 42
-        listSizeTextFieldViewConstraintToTextField.constant = 200
+        listSizeTextFieldConstraint.constant = 16
+        listSizeTextFieldViewConstraintToTextField.constant = 150
         finishSelectingListSizeButtonConstraint.constant = 100
         view.endEditing(true)
     }
