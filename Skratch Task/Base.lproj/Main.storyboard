@@ -11,16 +11,22 @@
         <!--Friends View Controller-->
         <scene sceneID="e51-hz-hq9">
             <objects>
-                <viewController id="PwF-ih-fol" customClass="FriendsViewController" customModule="Skratch_Task_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FriendsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PwF-ih-fol" customClass="FriendsViewController" customModule="Skratch_Task" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="swK-sQ-Wku">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8h7-nN-YxR">
+                                <rect key="frame" x="20" y="76" width="159.5" height="39"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gCm-At-XRP">
                                 <rect key="frame" x="0.0" y="140" width="414" height="756"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="friendCell" id="pYX-nx-2nY" customClass="FriendTableViewCell" customModule="Skratch_Task_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="friendCell" id="pYX-nx-2nY" customClass="FriendTableViewCell" customModule="Skratch_Task" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pYX-nx-2nY" id="Wr4-Az-sUG">
@@ -73,41 +79,136 @@
                                             <outlet property="fullNameLabel" destination="yZ0-ap-PQF" id="i6k-Aw-Crx"/>
                                             <outlet property="profilePicture" destination="9nR-oR-sPm" id="Tup-E3-xbT"/>
                                             <outlet property="usernameLabel" destination="osv-Rh-G2Z" id="dLL-4I-nuo"/>
-                                            <segue destination="Xjj-Uj-314" kind="presentation" identifier="userDetailsSegue" id="K11-r8-vhX"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PwF-ih-fol" id="GrC-KM-48t"/>
+                                    <outlet property="delegate" destination="PwF-ih-fol" id="UX8-F8-lhk"/>
+                                </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8h7-nN-YxR">
-                                <rect key="frame" x="20" y="76" width="159.5" height="39"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JOa-Is-9eC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pxn-n3-eBB">
+                                <rect key="frame" x="24" y="772" width="138" height="48"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVW-PB-KeW" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="48"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="138" id="jww-MZ-GEe"/>
+                                            <constraint firstAttribute="height" constant="48" id="pGT-2a-mpb"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="indicatorViewBackgroundColor">
+                                                <color key="value" red="0.9137254901960784" green="0.9137254901960784" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="indicatorViewInset">
+                                                <real key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeMapList:" destination="PwF-ih-fol" eventType="valueChanged" id="hdw-ec-Hdi"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="KVW-PB-KeW" secondAttribute="trailing" id="58m-fR-dL9"/>
+                                    <constraint firstAttribute="height" constant="48" id="JYI-Hu-DK2"/>
+                                    <constraint firstItem="KVW-PB-KeW" firstAttribute="leading" secondItem="Pxn-n3-eBB" secondAttribute="leading" id="NzY-Qj-ibx"/>
+                                    <constraint firstAttribute="bottom" secondItem="KVW-PB-KeW" secondAttribute="bottom" id="Qxv-CC-JIW"/>
+                                    <constraint firstAttribute="width" constant="138" id="Snq-VX-O8W"/>
+                                    <constraint firstItem="KVW-PB-KeW" firstAttribute="top" secondItem="Pxn-n3-eBB" secondAttribute="top" id="ul0-9K-yyE"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFy-I2-11s">
+                                <rect key="frame" x="440" y="708" width="52" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="oor-Op-TH4"/>
+                                    <constraint firstAttribute="width" constant="52" id="qcz-rE-3vh"/>
+                                </constraints>
+                                <state key="normal" image="done"/>
+                                <connections>
+                                    <action selector="finishSelectingFriendsSize:" destination="PwF-ih-fol" eventType="touchUpInside" id="pE6-gY-T2a"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGo-ez-N4D">
+                                <rect key="frame" x="342" y="772" width="48" height="48"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s2A-ZS-n9r">
+                                        <rect key="frame" x="0.0" y="9" width="48" height="30.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="s2A-ZS-n9r" firstAttribute="leading" secondItem="DGo-ez-N4D" secondAttribute="leading" id="3cT-be-O2R"/>
+                                    <constraint firstAttribute="trailing" secondItem="s2A-ZS-n9r" secondAttribute="trailing" id="7FD-oy-Af3"/>
+                                    <constraint firstItem="s2A-ZS-n9r" firstAttribute="centerX" secondItem="DGo-ez-N4D" secondAttribute="centerX" id="RHM-dR-JF2"/>
+                                    <constraint firstItem="s2A-ZS-n9r" firstAttribute="centerY" secondItem="DGo-ez-N4D" secondAttribute="centerY" id="Z9m-HO-sXN"/>
+                                    <constraint firstAttribute="width" constant="48" id="dD9-SY-HYt"/>
+                                    <constraint firstAttribute="height" constant="48" id="yd2-85-AR7"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="glw-0H-Ok7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="DGo-ez-N4D" firstAttribute="top" secondItem="pFy-I2-11s" secondAttribute="bottom" constant="12" id="3By-6F-UUI"/>
                             <constraint firstItem="8h7-nN-YxR" firstAttribute="leading" secondItem="glw-0H-Ok7" secondAttribute="leading" constant="20" id="6eL-aw-Mgj"/>
                             <constraint firstAttribute="bottom" secondItem="gCm-At-XRP" secondAttribute="bottom" id="7pP-HY-8Ch"/>
                             <constraint firstItem="gCm-At-XRP" firstAttribute="top" secondItem="8h7-nN-YxR" secondAttribute="bottom" constant="25" id="9cd-3g-f5r"/>
+                            <constraint firstItem="JOa-Is-9eC" firstAttribute="trailing" secondItem="glw-0H-Ok7" secondAttribute="trailing" id="Dl2-0A-Q7O"/>
+                            <constraint firstItem="JOa-Is-9eC" firstAttribute="top" secondItem="swK-sQ-Wku" secondAttribute="top" id="I9k-vd-9SE"/>
+                            <constraint firstItem="glw-0H-Ok7" firstAttribute="bottom" secondItem="Pxn-n3-eBB" secondAttribute="bottom" constant="42" id="JYO-dj-ttA"/>
+                            <constraint firstItem="Pxn-n3-eBB" firstAttribute="leading" secondItem="glw-0H-Ok7" secondAttribute="leading" constant="24" id="LIN-lF-yqK"/>
+                            <constraint firstItem="JOa-Is-9eC" firstAttribute="leading" secondItem="glw-0H-Ok7" secondAttribute="leading" id="LS6-TT-JIC"/>
+                            <constraint firstItem="glw-0H-Ok7" firstAttribute="bottom" secondItem="DGo-ez-N4D" secondAttribute="bottom" constant="42" id="O14-Kg-3tS"/>
                             <constraint firstItem="gCm-At-XRP" firstAttribute="leading" secondItem="glw-0H-Ok7" secondAttribute="leading" id="UJ7-oF-feD"/>
+                            <constraint firstAttribute="bottom" secondItem="JOa-Is-9eC" secondAttribute="bottom" id="ZAa-Xd-18q"/>
+                            <constraint firstItem="glw-0H-Ok7" firstAttribute="trailing" secondItem="DGo-ez-N4D" secondAttribute="trailing" constant="24" id="lSc-zg-t0P"/>
                             <constraint firstItem="gCm-At-XRP" firstAttribute="trailing" secondItem="glw-0H-Ok7" secondAttribute="trailing" id="lfG-xS-MF4"/>
                             <constraint firstItem="8h7-nN-YxR" firstAttribute="top" secondItem="swK-sQ-Wku" secondAttribute="top" constant="76" id="rGY-8L-uVr"/>
+                            <constraint firstItem="pFy-I2-11s" firstAttribute="centerX" secondItem="DGo-ez-N4D" secondAttribute="centerX" constant="100" id="vtc-hX-8u4"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="betterSegmentedControl" destination="KVW-PB-KeW" id="kEk-99-20n"/>
+                        <outlet property="betterSegmentedControlShadow" destination="Pxn-n3-eBB" id="qrW-Cn-5SV"/>
+                        <outlet property="finishSelectingListSizeButtonConstraint" destination="vtc-hX-8u4" id="t0Q-gF-aTV"/>
                         <outlet property="friendsTableView" destination="gCm-At-XRP" id="UmX-g9-SKy"/>
+                        <outlet property="listSizeTextField" destination="s2A-ZS-n9r" id="gOD-5z-GqS"/>
+                        <outlet property="listSizeTextFieldConstraint" destination="O14-Kg-3tS" id="XOm-aV-Q0j"/>
+                        <outlet property="listSizeView" destination="DGo-ez-N4D" id="27g-p7-Oaa"/>
+                        <outlet property="mapBoxView" destination="JOa-Is-9eC" id="msh-yE-1Rf"/>
+                        <segue destination="Xjj-Uj-314" kind="presentation" identifier="userDetailsSegue" id="Bml-cS-3e7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RbL-q8-Cxd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="813" y="94"/>
+            <point key="canvasLocation" x="811.59420289855075" y="93.75"/>
         </scene>
         <!--Friend Details View Controller-->
         <scene sceneID="pds-d3-1mQ">
             <objects>
-                <viewController modalPresentationStyle="overFullScreen" id="Xjj-Uj-314" customClass="FriendDetailsViewController" customModule="Skratch_Task_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FriendDetailsVC" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xjj-Uj-314" customClass="FriendDetailsViewController" customModule="Skratch_Task" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tmr-w9-CjQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -362,6 +463,7 @@
                             <constraint firstAttribute="bottom" secondItem="ek6-OO-61E" secondAttribute="bottom" id="dDx-eK-Zlj"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="zTd-QO-Krt"/>
                     <connections>
                         <outlet property="birthdateLabel" destination="RWB-O3-IwA" id="qW7-yq-a2w"/>
                         <outlet property="cardView" destination="ek6-OO-61E" id="gdm-hq-xbd"/>
@@ -383,6 +485,7 @@
     </scenes>
     <resources>
         <image name="birth" width="14" height="20"/>
+        <image name="done" width="64" height="64"/>
         <image name="email" width="20" height="20"/>
         <image name="handle" width="56" height="5"/>
         <image name="location" width="14" height="20"/>

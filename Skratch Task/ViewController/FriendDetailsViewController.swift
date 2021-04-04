@@ -47,12 +47,7 @@ class FriendDetailsViewController: UIViewController, UIGestureRecognizerDelegate
         updateViews()
         
         // Gestures
-        self.pan = UIPanGestureRecognizer(target: self, action: #selector(self.panAction))
-        self.pan.delegate = self
-        self.pan.maximumNumberOfTouches = 1
-        self.pan.cancelsTouchesInView = true
-
-        cardView.addGestureRecognizer(self.pan)
+        setUpPanGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +55,11 @@ class FriendDetailsViewController: UIViewController, UIGestureRecognizerDelegate
         UIView.animate(withDuration: 0.3, delay: 0.2, animations: {
             self.view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         })
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateViews()
     }
     
 
@@ -127,6 +127,15 @@ extension FriendDetailsViewController {
 
 //MARK: - Gesture Recognizers Functions
 extension FriendDetailsViewController {
+    
+    func setUpPanGesture() {
+        self.pan = UIPanGestureRecognizer(target: self, action: #selector(self.panAction))
+        self.pan.delegate = self
+        self.pan.maximumNumberOfTouches = 1
+        self.pan.cancelsTouchesInView = true
+
+        cardView.addGestureRecognizer(self.pan)
+    }
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer == self.pan {

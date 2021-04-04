@@ -1,0 +1,6 @@
+framework module Pods_Skratch_Task {
+  umbrella header "Pods-Skratch Task-umbrella.h"
+
+  export *
+  module * { export * }
+}

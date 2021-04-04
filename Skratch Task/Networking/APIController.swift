@@ -7,34 +7,67 @@
 
 import Foundation
 
+enum APIError: Error {
+    case responseProblem
+    case decodingProblem
+    case encodingProblem
+    
+    var errorDescription: String? {
+        switch self {
+        case .responseProblem:
+            return "Response Problem"
+        case .decodingProblem:
+            return "Decoding Problem"
+        case .encodingProblem:
+            return "Encoding Problem"
+        default:
+            return "Other Error"
+        }
+    }
+}
+
 class APIController {
     
     var users: [User] = []
     
-    let baseURL = URL(string: "https://randomuser.me/api/?results=10")!
+    var baseURL = URL(string: "https://randomuser.me/api/?results=5")!
     typealias CompletionHandler = (Error?) -> Void
     
-    func getUsers(completion: @escaping CompletionHandler = { _ in }) {
-        URLSession.shared.dataTask(with: baseURL) { (data, _, error) in
-            if let error = error {
-                NSLog("Error gettings user \(error)")
-            }
-            
-            guard let data = data else {
-                NSLog("No data returned")
-                completion(nil)
+    
+    init(listSize: Int) {
+        let resoucreString = "https://randomuser.me/api/?results=\(listSize)"
+        guard let resourceURL = URL(string: resoucreString) else {print("Incorrect Pass");fatalError()}
+        
+        self.baseURL = resourceURL
+    }
+    
+    init() {
+        let resoucreString = "https://randomuser.me/api/?results=5"
+        guard let resourceURL = URL(string: resoucreString) else {print("Incorrect Pass");fatalError()}
+        
+        self.baseURL = resourceURL
+    }
+    
+    func getFriends(completion: @escaping(Result<UserResult?, APIError>) -> Void) {
+        
+        let urlRequest = URLRequest(url: baseURL)
+        
+        let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, _ in
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let jsonData = data else {
+                completion(.failure(.responseProblem))
                 return
             }
-            
             do {
-                let newUsers = try JSONDecoder().decode(UserResult.self, from: data)
+                let newUsers = try JSONDecoder().decode(UserResult.self, from: jsonData)
                 self.users = newUsers.results
-                print(newUsers)
+                completion(.success(newUsers))
             } catch {
-                NSLog("Error decoding users \(error)")
-                completion(error)
+                completion(.failure(.decodingProblem))
+                return
             }
-            completion(nil)
-        }.resume()
+        }
+        dataTask.resume()
+        
+        
     }
 }
