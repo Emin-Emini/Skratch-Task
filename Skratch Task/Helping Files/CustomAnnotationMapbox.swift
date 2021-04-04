@@ -13,7 +13,6 @@ protocol CustomAnnotationViewDelegate: class {
     func didClickAnnonation(withUser user: User)
 }
 
-// MGLAnnotationView subclass
 class CustomAnnotationView: MGLAnnotationView {
     
     weak var delegate: CustomAnnotationViewDelegate?

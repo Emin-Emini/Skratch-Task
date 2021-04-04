@@ -19,10 +19,10 @@ class FriendsViewController: UIViewController {
     @IBOutlet weak var listSizeView: UIView!
     @IBOutlet weak var listSizeTextField: UITextField!
     @IBOutlet weak var listSizeTextFieldConstraint: NSLayoutConstraint!
+    @IBOutlet weak var listSizeTextFieldViewConstraintToTextField: NSLayoutConstraint!
     @IBOutlet weak var finishSelectingListSizeButtonConstraint: NSLayoutConstraint!
     
     //MARK: - Properties
-    //let apiController = APIController()
     var apiController = APIController(listSize: 5)
     
     
@@ -40,8 +40,9 @@ class FriendsViewController: UIViewController {
     }
     
     //MARK: - Actions
+    /*
+     This IBAction is SegmentedControl Action which changes view to Map or List */
     @IBAction func changeMapList(_ sender: BetterSegmentedControl) {
-        //print("The selected index is \(sender.index)")
         switch sender.index {
         case 0:
             mapBoxView.isHidden = false
@@ -52,12 +53,19 @@ class FriendsViewController: UIViewController {
         }
     }
     
+    /*
+     This IBAction is Button Action which is used to "confirm/done" assinged number of friends you want to appear.
+     For instance:
+     If you want to show 5 friends on the map or on the list, you just write in the Text Field number 5 and press the button.*/
     @IBAction func finishSelectingFriendsSize(_ sender: Any) {
         let selectedNumber = Int(listSizeTextField.text ?? "0") ?? 0
         apiController = APIController(listSize: selectedNumber)
-        listSizeTextFieldConstraint.constant = 42
-        finishSelectingListSizeButtonConstraint.constant = 100
         fetchDataFromAPI()
+        
+        listSizeView.layer.shadowOpacity = 0.2
+        listSizeTextFieldConstraint.constant = 42
+        listSizeTextFieldViewConstraintToTextField.constant = 200
+        finishSelectingListSizeButtonConstraint.constant = 100
         view.endEditing(true)
     }
     
@@ -65,10 +73,11 @@ class FriendsViewController: UIViewController {
 
 //MARK: - Fetch Data From API
 extension FriendsViewController {
+    //This function is used through `FriendsViewController` to fetch users from the API.
     func fetchDataFromAPI() {
         apiController.getFriends(completion: { result in
             switch result {
-            case .success(let listSize):
+            case .success( _):
                 DispatchQueue.main.async {
                     //print(listSize)
                     self.friendsTableView.reloadData()
@@ -84,10 +93,10 @@ extension FriendsViewController {
 //MARK: - Functions
 extension FriendsViewController {
     
-    /*This Functions loads Better Segmented Control.
+    /*
+     This Functions loads Better Segmented Control.
      Assigns icons and tint color. Also adds shadow to background of segment control    */
     func loadSegmentedControl() {
-        // Control 3: Many options
         betterSegmentedControl.segments = IconSegment.segments(withIcons: [UIImage(named: "map")!, UIImage(named: "list")!],
                                                                iconSize: CGSize(width: 20.0, height: 20.0),
                                                                normalIconTintColor: UIColor(red: 210/255, green: 212/255, blue: 227/255, alpha: 1.0),
@@ -99,6 +108,8 @@ extension FriendsViewController {
         betterSegmentedControlShadow.layer.shadowRadius = 8
     }
     
+    /*
+     This Functions adds shadow to background of segment control    */
     func loadListSizeView() {
         listSizeView.layer.shadowColor = UIColor.darkGray.cgColor
         listSizeView.layer.shadowOffset = CGSize(width: 0, height: 0)
@@ -140,7 +151,6 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
 
 
 //MARK: - Mapbox
-
 extension FriendsViewController: MGLMapViewDelegate {
     
     func loadMapBox() {
@@ -220,60 +230,14 @@ extension FriendsViewController: CustomAnnotationViewDelegate {
 // MARK:- Text Field
 
 extension FriendsViewController: UITextFieldDelegate {
-    
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
-            listSizeTextFieldConstraint.constant = keyboardHeight - 20
+            listSizeView.layer.shadowOpacity = 0
+            listSizeTextFieldConstraint.constant = keyboardHeight - 22
+            listSizeTextFieldViewConstraintToTextField.constant = 0
             finishSelectingListSizeButtonConstraint.constant = 0
         }
     }
-
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        // return NO to disallow editing.
-        print("TextField should begin editing method called")
-        return true
-    }
-
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        // became first responder
-        print("TextField did begin editing method called")
-    }
-
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        // return YES to allow editing to stop and to resign first responder status. NO to disallow the editing session to end
-        print("TextField should snd editing method called")
-        return true
-    }
-
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        // may be called if forced even if shouldEndEditing returns NO (e.g. view removed from window) or endEditing:YES called
-        print("TextField did end editing method called")
-    }
-
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        // if implemented, called in place of textFieldDidEndEditing:
-        print("TextField did end editing with reason method called")
-    }
-
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        // return NO to not change text
-        print("While entering the characters this method gets called")
-        return true
-    }
-
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        // called when clear button pressed. return NO to ignore (no notifications)
-        print("TextField should clear method called")
-        return true
-    }
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // called when 'return' key pressed. return NO to ignore.
-        print("TextField should return method called")
-        // may be useful: textField.resignFirstResponder()
-        return true
-    }
-
 }
