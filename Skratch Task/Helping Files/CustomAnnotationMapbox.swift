@@ -22,7 +22,7 @@ class CustomAnnotationView: MGLAnnotationView {
     
     private lazy var userNameLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .white
+        label.backgroundColor = .systemBackground
         label.textAlignment = .center
         label.layer.cornerRadius = 10
         label.font = .systemFont(ofSize: 15)
@@ -36,7 +36,7 @@ class CustomAnnotationView: MGLAnnotationView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .red
         imageView.layer.cornerRadius = 30
-        imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.layer.borderColor = UIColor.systemBackground.cgColor
         imageView.layer.borderWidth = 3.0
         return imageView
     }()

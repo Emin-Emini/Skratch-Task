@@ -64,5 +64,7 @@
 	</array>
 	<key>MGLMapboxAccessToken</key>
 	<string>pk.eyJ1IjoiZW1pbnJtYSIsImEiOiI2SzBuWHBNIn0.cZ9xrcNjzZIOiSUw5Sirtw</string>
+	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
+	<string>YES</string>
 </dict>
 </plist>

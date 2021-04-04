@@ -149,12 +149,23 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
 extension FriendsViewController: MGLMapViewDelegate {
     
     func loadMapBox() {
+        //let url = URL(string: "mapbox://styles/mapbox/streets-v11")
+        //let mapView = MGLMapView(frame: view.bounds, styleURL: url)
         let mapView = MGLMapView(frame: view.bounds)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.delegate = self
-
+        
+        if self.traitCollection.userInterfaceStyle == .dark {
+            // User Interface is Dark
+            mapView.styleURL = MGLStyle.darkStyleURL
+        } else {
+            // User Interface is Light
+            mapView.styleURL = MGLStyle.streetsStyleURL
+        }
         // Set the map’s center coordinate and zoom level.
         //mapView.setCenter(CLLocationCoordinate2D(latitude: 41.8864, longitude: -87.7135), zoomLevel: 13, animated: false)
+        mapView.logoView.isHidden = true
+        mapView.attributionButton.isHidden = true
         mapBoxView.addSubview(mapView)
         
         loadFriendsOnMapbox(mapView: mapView)
