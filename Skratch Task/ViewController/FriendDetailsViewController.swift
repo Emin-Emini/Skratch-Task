@@ -42,12 +42,12 @@ class FriendDetailsViewController: UIViewController, UIGestureRecognizerDelegate
 
         // Do any additional setup after loading the view.
         
+        setUpCardView()
+        setUpPanGesture()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.0)
         
-        updateViews()
-        
-        // Gestures
-        setUpPanGesture()
+        guard let user = user else { return }
+        configureUserDetailsView(with: UserViewModel(with: user))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,12 +56,6 @@ class FriendDetailsViewController: UIViewController, UIGestureRecognizerDelegate
             self.view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         })
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        updateViews()
-    }
-    
 
     //MARK: - Actions
     @IBAction func goBack() {
@@ -76,25 +70,31 @@ class FriendDetailsViewController: UIViewController, UIGestureRecognizerDelegate
 extension FriendDetailsViewController {
     
     /*
+    This function adds shadow to Card View  */
+    func setUpCardView() {
+        cardView.layer.shadowColor = UIColor.darkGray.cgColor
+        cardView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        cardView.layer.shadowOpacity = 0.2
+        cardView.layer.shadowRadius = 8
+    }
+    
+    /*
     This function updates Labels and Images from selected Table View Cell  */
-    func updateViews() {
-        //guard isViewLoaded, let user = user else { return }
-        guard let user = user else { return }
-        
-        guard let imageData = try? Data(contentsOf: user.picture.large) else {
+    func configureUserDetailsView(with viewModel: UserViewModel) {
+        guard let imageData = try? Data(contentsOf: viewModel.picture.large) else {
             fatalError()
         }
         profilePicture.image = UIImage(data: imageData)
-        nameLabel.text = "\(user.name.first.capitalized) \(user.name.last.capitalized)"
-        usernameLabel.text = "\(user.login.username)"
+        nameLabel.text = "\(viewModel.name.first.capitalized) \(viewModel.name.last.capitalized)"
+        usernameLabel.text = "\(viewModel.login.username)"
         
-        genderAgeLabel.text = "\(user.gender.capitalized) \(user.dob.age)"
-        birthdateLabel.text = formatDate(date: user.dob.date, withTime: false)
-        streetLabel.text = "\(user.location.street.number) \(user.location.street.name)"
-        cityCountryLabel.text = "\(user.location.city), \(user.location.state), \(user.location.country)"
-        phoneLabel.text = "\(user.phone)"
-        emailLabel.text = "\(user.email)"
-        registeredDateLabel.text = "Registered on \(formatDate(date: user.dob.date, withTime: true))"
+        genderAgeLabel.text = "\(viewModel.gender.capitalized) \(viewModel.dob.age)"
+        birthdateLabel.text = formatDate(date: viewModel.dob.date, withTime: false)
+        streetLabel.text = "\(viewModel.location.street.number) \(viewModel.location.street.name)"
+        cityCountryLabel.text = "\(viewModel.location.city), \(viewModel.location.state), \(viewModel.location.country)"
+        phoneLabel.text = "\(viewModel.phone)"
+        emailLabel.text = "\(viewModel.email)"
+        registeredDateLabel.text = "Registered on \(formatDate(date: viewModel.dob.date, withTime: true))"
     }
     
     /*

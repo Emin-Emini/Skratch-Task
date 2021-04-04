@@ -237,8 +237,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7M-g6-P0h">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <connections>
+                                    <action selector="goBack" destination="Xjj-Uj-314" eventType="touchUpInside" id="gbi-dl-fqq"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ek6-OO-61E">
-                                <rect key="frame" x="0.0" y="360" width="414" height="536"/>
+                                <rect key="frame" x="0.0" y="360" width="414" height="566"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNu-Zd-Srd">
                                         <rect key="frame" x="179" y="2" width="56" height="22"/>
@@ -464,7 +470,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="9nb-mi-oho" secondAttribute="bottom" constant="24" id="3e2-t4-8on"/>
+                                    <constraint firstAttribute="bottom" secondItem="9nb-mi-oho" secondAttribute="bottom" constant="54" id="3e2-t4-8on"/>
                                     <constraint firstItem="MNu-Zd-Srd" firstAttribute="centerX" secondItem="ek6-OO-61E" secondAttribute="centerX" id="B2E-26-Kw8"/>
                                     <constraint firstItem="MNu-Zd-Srd" firstAttribute="top" secondItem="ek6-OO-61E" secondAttribute="top" constant="2" id="Hj1-DU-MQz"/>
                                     <constraint firstItem="9nb-mi-oho" firstAttribute="leading" secondItem="ek6-OO-61E" secondAttribute="leading" constant="16" id="L3O-Yd-ZVI"/>
@@ -483,8 +489,12 @@
                         <color key="backgroundColor" systemColor="separatorColor"/>
                         <constraints>
                             <constraint firstItem="ek6-OO-61E" firstAttribute="trailing" secondItem="X5O-3P-dvm" secondAttribute="trailing" id="4qo-ty-TfE"/>
+                            <constraint firstAttribute="bottom" secondItem="t7M-g6-P0h" secondAttribute="bottom" id="FLs-4x-RZN"/>
                             <constraint firstItem="ek6-OO-61E" firstAttribute="leading" secondItem="X5O-3P-dvm" secondAttribute="leading" id="QsI-L3-Upq"/>
-                            <constraint firstAttribute="bottom" secondItem="ek6-OO-61E" secondAttribute="bottom" id="dDx-eK-Zlj"/>
+                            <constraint firstItem="t7M-g6-P0h" firstAttribute="trailing" secondItem="X5O-3P-dvm" secondAttribute="trailing" id="RtB-3d-4fd"/>
+                            <constraint firstItem="t7M-g6-P0h" firstAttribute="top" secondItem="tmr-w9-CjQ" secondAttribute="top" id="ZRp-Yh-BKp"/>
+                            <constraint firstAttribute="bottom" secondItem="ek6-OO-61E" secondAttribute="bottom" constant="-30" id="dDx-eK-Zlj"/>
+                            <constraint firstItem="t7M-g6-P0h" firstAttribute="leading" secondItem="X5O-3P-dvm" secondAttribute="leading" id="iF2-sN-xzG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zTd-QO-Krt"/>
@@ -504,7 +514,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uvl-gb-vCA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1599" y="94"/>
+            <point key="canvasLocation" x="1598.5507246376812" y="93.75"/>
         </scene>
     </scenes>
     <resources>

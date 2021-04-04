@@ -58,7 +58,7 @@ class CustomAnnotationView: MGLAnnotationView {
         
         NSLayoutConstraint.activate([
             userNameLabel.topAnchor.constraint(equalTo: topAnchor),
-            userNameLabel.widthAnchor.constraint(equalToConstant: 90), // you can calculate the width of the label based on the text size
+            userNameLabel.widthAnchor.constraint(equalToConstant: 90), //Calculate the width of the label based on the text size
             userNameLabel.heightAnchor.constraint(equalToConstant: 20),
             userNameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
