@@ -189,7 +189,7 @@
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="1Wd-uI-1SX">
                                 <rect key="frame" x="192" y="433" width="30" height="30"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="backgroundColor" red="0.33725490196078434" green="0.14901960784313725" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="KHq-1E-T7b"/>
                                     <constraint firstAttribute="height" constant="30" id="uXA-GD-JcN"/>
@@ -546,9 +546,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
