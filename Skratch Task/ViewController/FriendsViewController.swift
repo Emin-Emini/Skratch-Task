@@ -64,9 +64,11 @@ class FriendsViewController: UIViewController {
         fetchDataFromAPI()
         
         listSizeView.layer.shadowOpacity = 0.2
-        listSizeTextFieldConstraint.constant = 16
-        listSizeTextFieldViewConstraintToTextField.constant = 150
-        finishSelectingListSizeButtonConstraint.constant = 100
+        UIView.animate(withDuration: 0.8, animations: {
+            self.listSizeTextFieldConstraint.constant = 16
+            self.listSizeTextFieldViewConstraintToTextField.constant = 150
+            self.finishSelectingListSizeButtonConstraint.constant = 100
+        })
         view.endEditing(true)
     }
     
