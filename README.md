@@ -97,7 +97,7 @@ Below is a sample of the data that you can get from the API (For more please che
 ## Work Process
 How I started working?
 Firstly, I analized the API. What kind of data it offers? How it works? and more.
-Then, based on the UI design I received, I analized what kind of data I need for the user. After realizing which data are needed and which ones are not, I visualized them using `UML Diagrams`. 
+Then, based on the UI design, I analized what kind of data I need for the user. After realizing which data are needed and which ones are not, I visualized them using `UML Diagrams`. 
 
 <img src="right-arrow.svg">
 
@@ -105,4 +105,19 @@ Thanks to the structure of the JSON API, I could easily achieve High Cohesion on
 
 
 ## Architecture
+
+<img src="">
+
+The architecture of the software is really important. Once you define requirements of the project, it's best to define architecture too. It allows you to manage and understand what it would take to make a particular change, and how the software will comunicate with the user and server or API provider.
+
+Most common architectures for iOS are `MVC` and `MVVM`.<br>
+Firstly, I developed it on MVC then I moved it on MVVM. For this simple task, MVC is enough, but I migrated with a purpose to present my skills.<br>
+
+Why it's important to know how to migrate from one architecture to another?<br>
+Softwares from time to time advances and can't rely anymore on a specific architecture for many reasons, so it's really important to have a skills for migrating a software, rather than creating it from scratch.
+
+Why `MVVM` over `MVC` and `MVP`? <br>
+`MVP` and `MVVM` are derived by `MVC`. With these two, the modules are less coupled with each other compare to `MVC`. And lastly, `MVVM` have Higher Cohesion than `MVP` and `MVC`, which helps to manage and organize code well.
+
+
 ## Conclusion
