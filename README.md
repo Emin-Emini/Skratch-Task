@@ -1,4 +1,5 @@
 # Skratch Task
+<img src="SkratchLogo.png">
 
 ## Overview
 [Description](Description)
@@ -106,7 +107,7 @@ Thanks to the structure of the JSON API, I could easily achieve High Cohesion on
 
 ## Architecture
 
-<img src="">
+<img src="mvc-mvp-mvvm.png">
 
 The architecture of the software is really important. Once you define requirements of the project, it's best to define architecture too. It allows you to manage and understand what it would take to make a particular change, and how the software will comunicate with the user and server or API provider.
 
