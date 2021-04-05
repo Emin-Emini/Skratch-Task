@@ -100,7 +100,7 @@ How I started working?
 Firstly, I analized the API. What kind of data it offers? How it works? and more.
 Then, based on the UI design, I analized what kind of data I need for the user. After realizing which data are needed and which ones are not, I visualized them using `UML Diagrams`. 
 
-<img src="right-arrow.svg">
+<img src="UML-Diagram.png">
 
 Thanks to the structure of the JSON API, I could easily achieve High Cohesion on my project. Which is really important for reducing module complexity and software maintainance.
 
