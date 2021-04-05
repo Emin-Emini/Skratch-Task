@@ -10,7 +10,6 @@ import Foundation
 enum APIError: Error {
     case responseProblem
     case decodingProblem
-    case encodingProblem
     
     var errorDescription: String? {
         switch self {
@@ -18,32 +17,32 @@ enum APIError: Error {
             return "Response Problem"
         case .decodingProblem:
             return "Decoding Problem"
-        case .encodingProblem:
-            return "Encoding Problem"
         default:
             return "Other Error"
         }
     }
 }
 
+var listSizeNumber: Int = 5
+
 class APIController {
     
     var users: [User] = []
     
-    var baseURL = URL(string: "https://randomuser.me/api/?results=5")!
+    var baseURL = URL(string: "https://randomuser.me/api/?results=\(listSizeNumber)")!
     typealias CompletionHandler = (Error?) -> Void
     
     
     init(listSize: Int) {
         let resoucreString = "https://randomuser.me/api/?results=\(listSize)"
-        guard let resourceURL = URL(string: resoucreString) else {print("Incorrect Pass");fatalError()}
+        guard let resourceURL = URL(string: resoucreString) else {print("Wrong URL"); fatalError()}
         
         self.baseURL = resourceURL
     }
     
     init() {
-        let resoucreString = "https://randomuser.me/api/?results=5"
-        guard let resourceURL = URL(string: resoucreString) else {print("Incorrect Pass");fatalError()}
+        let resoucreString = "https://randomuser.me/api/?results=\(listSizeNumber)"
+        guard let resourceURL = URL(string: resoucreString) else {print("Wrong URL"); fatalError()}
         
         self.baseURL = resourceURL
     }

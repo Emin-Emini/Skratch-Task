@@ -24,7 +24,7 @@ class FriendsViewController: UIViewController {
     
     //MARK: - Properties
     //API Controller
-    var apiController = APIController(listSize: 5)
+    var apiController = APIController(listSize: listSizeNumber)
     
     
     //MARK: - View Load
@@ -109,9 +109,14 @@ extension FriendsViewController {
         betterSegmentedControlShadow.layer.shadowRadius = 8
     }
     
+    func loadTextField() {
+        listSizeTextField.text = "\(listSizeNumber)"
+    }
+    
     /*
      This Functions adds shadow to background of segment control    */
     func loadListSizeView() {
+        loadTextField()
         listSizeView.layer.shadowColor = UIColor.darkGray.cgColor
         listSizeView.layer.shadowOffset = CGSize(width: 0, height: 0)
         listSizeView.layer.shadowOpacity = 0.2
