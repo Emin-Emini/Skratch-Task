@@ -187,6 +187,20 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="1Wd-uI-1SX">
+                                <rect key="frame" x="192" y="433" width="30" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="KHq-1E-T7b"/>
+                                    <constraint firstAttribute="height" constant="30" id="uXA-GD-JcN"/>
+                                </constraints>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="glw-0H-Ok7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -200,12 +214,14 @@
                             <constraint firstItem="Pxn-n3-eBB" firstAttribute="leading" secondItem="glw-0H-Ok7" secondAttribute="leading" constant="24" id="LIN-lF-yqK"/>
                             <constraint firstItem="JOa-Is-9eC" firstAttribute="leading" secondItem="glw-0H-Ok7" secondAttribute="leading" id="LS6-TT-JIC"/>
                             <constraint firstItem="glw-0H-Ok7" firstAttribute="bottom" secondItem="DGo-ez-N4D" secondAttribute="bottom" constant="16" id="O14-Kg-3tS"/>
+                            <constraint firstItem="1Wd-uI-1SX" firstAttribute="centerY" secondItem="swK-sQ-Wku" secondAttribute="centerY" id="TXJ-jm-QHz"/>
                             <constraint firstItem="gCm-At-XRP" firstAttribute="leading" secondItem="glw-0H-Ok7" secondAttribute="leading" id="UJ7-oF-feD"/>
                             <constraint firstItem="Q2v-uP-yAh" firstAttribute="centerY" secondItem="DGo-ez-N4D" secondAttribute="centerY" constant="150" id="WAR-oY-mCx"/>
                             <constraint firstItem="Q2v-uP-yAh" firstAttribute="leading" secondItem="glw-0H-Ok7" secondAttribute="leading" id="Xe1-HF-GWN"/>
                             <constraint firstAttribute="bottom" secondItem="JOa-Is-9eC" secondAttribute="bottom" id="ZAa-Xd-18q"/>
                             <constraint firstItem="glw-0H-Ok7" firstAttribute="trailing" secondItem="DGo-ez-N4D" secondAttribute="trailing" constant="24" id="lSc-zg-t0P"/>
                             <constraint firstItem="gCm-At-XRP" firstAttribute="trailing" secondItem="glw-0H-Ok7" secondAttribute="trailing" id="lfG-xS-MF4"/>
+                            <constraint firstItem="1Wd-uI-1SX" firstAttribute="centerX" secondItem="swK-sQ-Wku" secondAttribute="centerX" id="liU-02-ciI"/>
                             <constraint firstItem="Q2v-uP-yAh" firstAttribute="trailing" secondItem="glw-0H-Ok7" secondAttribute="trailing" id="nYU-Hf-ADf"/>
                             <constraint firstItem="Q2v-uP-yAh" firstAttribute="top" secondItem="pFy-I2-11s" secondAttribute="bottom" constant="24" id="oWT-5c-8Da"/>
                             <constraint firstItem="8h7-nN-YxR" firstAttribute="top" secondItem="swK-sQ-Wku" secondAttribute="top" constant="76" id="rGY-8L-uVr"/>
@@ -213,6 +229,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="1Wd-uI-1SX" id="TuE-d8-BbX"/>
                         <outlet property="betterSegmentedControl" destination="KVW-PB-KeW" id="kEk-99-20n"/>
                         <outlet property="betterSegmentedControlShadow" destination="Pxn-n3-eBB" id="qrW-Cn-5SV"/>
                         <outlet property="finishSelectingListSizeButtonConstraint" destination="vtc-hX-8u4" id="t0Q-gF-aTV"/>
@@ -529,6 +546,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

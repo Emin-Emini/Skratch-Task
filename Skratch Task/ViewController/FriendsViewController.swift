@@ -21,6 +21,7 @@ class FriendsViewController: UIViewController {
     @IBOutlet weak var listSizeTextFieldConstraint: NSLayoutConstraint!
     @IBOutlet weak var listSizeTextFieldViewConstraintToTextField: NSLayoutConstraint!
     @IBOutlet weak var finishSelectingListSizeButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     //MARK: - Properties
     //API Controller
@@ -84,6 +85,8 @@ class FriendsViewController: UIViewController {
 extension FriendsViewController {
     //This function is used through `FriendsViewController` to fetch users from the API.
     func fetchDataFromAPI() {
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
         apiController.getFriends(completion: { result in
             switch result {
             case .success( _):
@@ -91,9 +94,11 @@ extension FriendsViewController {
                     //print(listSize)
                     self.friendsTableView.reloadData()
                     self.loadMapBox()
+                    self.activityIndicator.stopAnimating()
                 }
             case .failure(let error):
                 print("Error: \(error)")
+                self.activityIndicator.stopAnimating()
             }
         })
     }
