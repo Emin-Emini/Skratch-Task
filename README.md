@@ -98,14 +98,18 @@ Below is a sample of the data that you can get from the API (For more please che
 }
 ```
 ## Work Process
+### API Analyze and Model Define
 How I started working?
 Firstly, I analized the API. What kind of data it offers? How it works? and more.
-Then, based on the UI design, I analized what kind of data I need for the user. After realizing which data are needed and which ones are not, I visualized them using `UML Diagrams`. 
+Then, based on the UI design, I analized what kind of data I need for the user. After realizing which data are needed and which ones are not, I realizied which model I have to create and then I visualized them using `UML Diagrams`. 
 
 <img src="UML-Diagram.png">
 
 Thanks to the structure of the JSON API, I could easily achieve High Cohesion on my project. Which is really important for reducing module complexity and software maintainance.
 
+### Customizing UI
+
+Moreover, because Apple have "limited" UI preferences, I had to use thir-party library for customizing `Segmented Control`. For this task, I used <a href="https://github.com/gmarm/BetterSegmentedControl">Better Segmented Control</a> developed by <a href="hhttps://github.com/gmarm">Gmarm</a>. 
 
 ## Architecture
 
@@ -127,3 +131,5 @@ In adition, testing wasn't required in this task, but I added it willingly. I cr
 
 
 ## Conclusion
+At the end, I would like to present it visually how user will comunicate with the app and other services. To mention, I presented it on a `Deployment Diagram`.
+<img src="Depoyment-Diagram.png">
