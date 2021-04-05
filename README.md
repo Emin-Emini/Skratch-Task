@@ -10,6 +10,8 @@
 
 [Architecture](#architecture)
 
+[Testing](#testing)
+
 [Conclusion](#conclusion)
 
 ## Description
@@ -119,6 +121,9 @@ Softwares from time to time advances and can't rely anymore on a specific archit
 
 Why `MVVM` over `MVC` and `MVP`? <br>
 `MVP` and `MVVM` are derived by `MVC`. With these two, the modules are less coupled with each other compare to `MVC`. And lastly, `MVVM` have Higher Cohesion than `MVP` and `MVC`, which helps to manage and organize code well.
+
+## Testing
+In adition, testing wasn't required in this task, but I added it willingly. I create a couple of test cases to test `MVVM` and `API Controller`
 
 
 ## Conclusion
