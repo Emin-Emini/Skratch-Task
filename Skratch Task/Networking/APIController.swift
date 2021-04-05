@@ -29,6 +29,10 @@ class APIController {
     
     var users: [User] = []
     
+    /*Note:
+     Usually baseurl I create it like a base, for instance in this case: https://randomuser.me/api/
+     So I can use it later through the app, in this case the proejct was simple, and I put the whole api in the baseURL.
+     */
     var baseURL = URL(string: "https://randomuser.me/api/?results=\(listSizeNumber)")!
     typealias CompletionHandler = (Error?) -> Void
     
