@@ -69,6 +69,12 @@ class FriendsViewController: UIViewController {
             self.listSizeTextFieldViewConstraintToTextField.constant = 150
             self.finishSelectingListSizeButtonConstraint.constant = 100
         })
+        
+        /*Because API Can't return 0 users, this condition statement is created to show visually number 1.
+         (Just for the sake of UI) */
+        if listSizeTextField.text == "0" {
+            listSizeTextField.text = "1"
+        }
         view.endEditing(true)
     }
     
