@@ -94,7 +94,7 @@ extension FriendDetailsViewController {
         cityCountryLabel.text = "\(viewModel.location.city), \(viewModel.location.state), \(viewModel.location.country)"
         phoneLabel.text = "\(viewModel.phone)"
         emailLabel.text = "\(viewModel.email)"
-        registeredDateLabel.text = "Registered on \(formatDate(date: viewModel.dob.date, withTime: true))"
+        registeredDateLabel.text = "Registered on \(formatDate(date: viewModel.registered.date, withTime: true))"
     }
     
     /*
