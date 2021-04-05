@@ -2,15 +2,15 @@
 <img src="SkratchLogo.png">
 
 ## Overview
-[Description](Description)
+[Description](#description)
 
-[Random User API](Random-User-API)
+[Random User API](#random-user-api)
 
-[Work Process](Work-Process)
+[Work Process](#work-process)
 
-[Architecture](Architecture)
+[Architecture](#architecture)
 
-[Conclusion](Conclusion)
+[Conclusion](#conclusion)
 
 ## Description
 **This project is created as an interview task assigned from Skratch.**
